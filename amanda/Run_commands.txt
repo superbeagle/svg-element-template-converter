@@ -1,0 +1,37 @@
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_cat-food-bowl.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 catFoodBowl "Feed the cat" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_cat-food-bowl-orange.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 catFoodBowlOrange "Feed the cat with orange bowl" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_cat-food-fish-bone.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 catFoodFishBone "Fish treat to cat" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_cat-food-fish-bone-orange.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 catFoodFishBoneOrange "Fish treat to cat, orange" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_coffee-circle.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 coffeeCircle "Coffee circle!" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_coffee-circle-yellow.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 coffeeCircleYellow "Coffee circle but yellow!" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_coffee-cup.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 coffeeCup "Coffee cup" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_coffee-cup-grey.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 coffeeCupGrey "Coffee cup grey" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_dog-food-bone.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 dogFoodBone "Dog bone treat" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_dog-food-bone-teal.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 dogFoodBoneTeal "Dog bone, teal" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_dog-food-bowl.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 dogFoodBowl "Feed the dogs" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_dog-food-bowl-teal.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 dogFoodBowlTeal "Feed the dogs, teal" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_new-camunda-logo.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 newCamundaLogo "Wear current Camunda shirt" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_new-camunda-logo-orange.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 newCamundaLogoOrange "Wear new Camunda shirt, orange" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_old-camunda-logo.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 oldCamundaLogo "Wear Camunda classic shirt" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_old-logo-animated_CSS.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 oldCamundaLogoAnimated "Wear Camunda classic shirt, surprise" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_question-mark.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 questionMark "What Camunda shirt to wear?" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/Summer-Hackdays-Icons_question-mark-blue.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 questionMarkBlue "What Camunda shirt to wear? blue" bpmn:UserTask
+
+file:///C:/workspaces/hackdays2022/amanda/animatedWithIds.svg C:/Modeler_5.0/resources/element-templates/elementTemplates.json 18 animatedWithIds "Animated with IDs" bpmn:UserTask
