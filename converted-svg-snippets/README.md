@@ -1,7 +1,8 @@
 # Converted SVGs
 If you don't want to run the SVGs through the converter you can simply copy and paste these into the ```contents``` of your Element Template entry. For example:
 
-```{
+```
+{
 		"$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
 		"name": "Feed the cat",
 		"icon": {
@@ -26,5 +27,8 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 				"value": "Feed the cat"
 			}
 		]
-	}```
+	}
+```
+
+
 ![](./thumbnail-svgs/catFoodBowl.svg) Cat Food Bowl
