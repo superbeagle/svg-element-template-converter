@@ -1,11 +1,18 @@
 package org.svg.utilities;
 
+import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.parser.ParseException;
 import org.apache.batik.parser.PathHandler;
-
+import org.apache.batik.parser.PathParser;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.svg.SVGDocument;
 import java.io.StringWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class MyPathHandler implements PathHandler {
+public class CustomPathHandler implements PathHandler {
 
     private StringWriter path;
     private float origWidth;
@@ -15,7 +22,7 @@ public class MyPathHandler implements PathHandler {
     private float factorX;
     private float factorY;
 
-    public MyPathHandler(float ow, float oh, float nw, float nh) {
+    public CustomPathHandler(float ow, float oh, float nw, float nh) {
         path = new StringWriter();
         origWidth = ow;
         origHeight = oh;
@@ -23,6 +30,58 @@ public class MyPathHandler implements PathHandler {
         newHeight = nh;
         factorX = ow/nw;
         factorY = oh/nh;
+    }
+
+    public static SVGDocument handlePath(SVGDocument svg, Node node, String originalWidth, String originalHeight, String targetWidth, String targetHeight) {
+        Node parentNode = node.getParentNode();
+        NamedNodeMap nnm = node.getAttributes();
+        Node dNode = nnm.getNamedItem("d");
+
+        PathParser pp = new PathParser();
+        CustomPathHandler mph = new CustomPathHandler(Float.valueOf(originalWidth), Float.valueOf(originalHeight) , Float.valueOf(targetWidth), Float.valueOf(targetHeight));
+        pp.setPathHandler(mph);
+        pp.parse(dNode.getTextContent());
+
+        Element path = svg.createElementNS(SVGDOMImplementation.SVG_NAMESPACE_URI, "path");
+        path.setAttributeNS(null, "d",mph.getPath());
+
+        if (nnm.getNamedItem("id") != null) {
+            path.setAttribute("id", nnm.getNamedItem("id").getTextContent() ) ;
+        }
+        if (nnm.getNamedItem("style") != null) {
+            path.setAttribute("style", nnm.getNamedItem("style").getTextContent());
+        }
+        if (nnm.getNamedItem("fill") != null) {
+            path.setAttribute("fill", nnm.getNamedItem("fill").getTextContent());
+        }
+
+        if (nnm.getNamedItem("id") != null) {
+            path.setAttribute("id", nnm.getNamedItem("id").getTextContent());
+        }
+
+        if (nnm.getNamedItem("class") != null) {
+            path.setAttribute("class", nnm.getNamedItem("class").getTextContent());
+        }
+
+        if (nnm.getNamedItem("transform") != null) {
+            String translate = nnm.getNamedItem("transform").getTextContent();
+            Pattern pattern = Pattern.compile("(translate\\()(.*)(,)(.*)(\\)(.*))", Pattern.DOTALL);
+            Matcher matcher = pattern.matcher(translate);
+            boolean matchFound = matcher.find();
+            if(matchFound) {
+                System.out.println("Match found");
+                System.out.println(matcher.group(2) + " " + matcher.group(4));
+                String newX = String.valueOf((Float.valueOf(targetWidth) / Float.valueOf(originalWidth)) * Float.valueOf(matcher.group(2)));
+                String newY = String.valueOf((Float.valueOf(targetHeight) / Float.valueOf(originalHeight)) * Float.valueOf(matcher.group(4)));
+                path.setAttribute("transform", "translate(" + newX + "," + newY + ")"+ (matcher.group(6).length() > 0 ? " "+matcher.group(6) : "")) ;
+            } else {
+                System.out.println("Match not found");
+            }
+        }
+
+        parentNode.replaceChild(path, node);
+
+        return svg;
     }
 
     public String getPath() {

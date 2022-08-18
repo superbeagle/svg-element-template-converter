@@ -5,7 +5,7 @@ import org.apache.batik.parser.PointsHandler;
 
 import java.io.StringWriter;
 
-public class MyPointsHandler implements PointsHandler {
+public class CustomPointsHandler implements PointsHandler {
 
     private StringWriter points;
     private float origWidth;
@@ -15,7 +15,7 @@ public class MyPointsHandler implements PointsHandler {
     private float factorX;
     private float factorY;
 
-    public MyPointsHandler(float ow, float oh, float nw, float nh) {
+    public CustomPointsHandler(float ow, float oh, float nw, float nh) {
         points = new StringWriter();
         origWidth = ow;
         origHeight = oh;

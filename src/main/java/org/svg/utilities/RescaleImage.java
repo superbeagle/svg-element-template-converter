@@ -1,9 +1,6 @@
 package org.svg.utilities;
 
 import org.apache.batik.anim.dom.SAXSVGDocumentFactory;
-import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.parser.PathParser;
-import org.apache.batik.parser.PointsParser;
 import org.apache.batik.util.XMLResourceDescriptor;
 
 import org.json.JSONArray;
@@ -17,11 +14,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
-import org.json.JSONObject;
 
 
 public class RescaleImage {
@@ -43,12 +40,8 @@ public class RescaleImage {
 
             SVGDocument svg = f.createSVGDocument(uri);
 
-            DOMImplementation impl = SVGDOMImplementation.getDOMImplementation();
-            String svgNS = SVGDOMImplementation.SVG_NAMESPACE_URI;
-            Document doc = impl.createDocument(svgNS, "svg", null);
-
             // Get the root element (the 'svg' element).
-            Element svgRoot = doc.getDocumentElement();
+            Element svgRoot = svg.getDocumentElement();
 
             // get width and height of original svg viewbox
             NamedNodeMap nnmRoot = svg.getRootElement().getAttributes();
@@ -58,183 +51,65 @@ public class RescaleImage {
             Float calcTargetHeight = (Float.valueOf(targetWidth)/Float.valueOf(originalWidth) * Float.valueOf(originalHeight));
             String targetHeight = calcTargetHeight.toString();
 
-            //System.out.println("viewBox is "+ nnmRoot.getNamedItem("viewBox").getNodeValue());
-
             // Set the width and height attributes on the root 'svg' element.
             svgRoot.setAttributeNS(null, "width", targetWidth);
             svgRoot.setAttributeNS(null, "height", targetHeight);
             svgRoot.setAttributeNS(null, "viewbox", "0 0 "+targetWidth+" "+targetHeight);
 
-            NodeList nl = svg.getElementsByTagName("style");
+            // First we'll process anything inside groups to maintain SVG fidelity as best as possible. Then we'll process each possible standalone type
+            NodeList nl = svg.getElementsByTagName("g");
             for (int i=0; i < nl.getLength(); i++) {
-                Element style = doc.createElementNS(svgNS, "style");
-                NamedNodeMap nnm = nl.item(i).getAttributes();
-                if (nnm.getNamedItem("type") != null) {
-                    style.setAttribute("type", nnm.getNamedItem("type").getTextContent());
-                    style.setTextContent(nl.item(i).getTextContent());
+                svg = GroupHandler.transformGroup(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
+            }
+
+            Node parentNode = null;
+
+            // Now we look for other elements not in groups and transform them
+            nl = svg.getElementsByTagName("style");
+            for (int i=0; i < nl.getLength(); i++) {
+                parentNode = nl.item(i).getParentNode();
+                // if parent node is a group, ignore it since it was already processed
+                if(!parentNode.getNodeName().equals("g")) {
+                    svg = StyleHandler.transformStyle(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
                 }
-                svgRoot.appendChild(style);
             }
 
             nl = svg.getElementsByTagName("circle");
             for (int i=0; i < nl.getLength(); i++) {
-                Element circle = doc.createElementNS(svgNS, "circle");
-                NamedNodeMap nnm = nl.item(i).getAttributes();
-                if (nnm.getNamedItem("cx") != null) {
-                    //System.out.println("Found circle x" +nnm.getNamedItem("cx").getTextContent());
-                    Float x = Float.valueOf(nnm.getNamedItem("cx").getTextContent());
-                    Float newX = Float.valueOf(targetWidth)/Float.valueOf(originalWidth) * x;
-                    circle.setAttribute("cx", newX.toString());
+                parentNode = nl.item(i).getParentNode();
+                // if parent node is a group, ignore it since it was already processed
+                if (!parentNode.getNodeName().equals("g")) {
+                    svg = CircleHandler.transformCircle(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
                 }
-
-                if (nnm.getNamedItem("cy") != null) {
-                    //System.out.println("Found circle y" +nnm.getNamedItem("cy").getTextContent());
-                    Float y = Float.valueOf(nnm.getNamedItem("cy").getTextContent());
-                    Float newY = Float.valueOf(targetHeight)/Float.valueOf(originalHeight) * y;
-                    circle.setAttribute("cy", newY.toString());
-                }
-
-                if (nnm.getNamedItem("r") != null) {
-                    //System.out.println("Found circle r");
-                    Float r = Float.valueOf(nnm.getNamedItem("r").getTextContent());
-                    Float newR = Float.valueOf(targetHeight)/Float.valueOf(originalHeight) * r;
-                    circle.setAttribute("r", newR.toString());
-                }
-                /*System.out.println("circle is "+circle.getAttribute("cx"));
-                System.out.println("circle is "+circle.getAttribute("cy"));
-                System.out.println("circle is "+circle.getAttribute("r"));*/
-                svgRoot.appendChild(circle);
-            }
-
-            nl = svg.getElementsByTagName("g");
-            for (int i=0; i < nl.getLength(); i++) {
-
             }
 
             nl = svg.getElementsByTagName("path");
             for (int i=0; i < nl.getLength(); i++) {
-                NamedNodeMap nnm = nl.item(i).getAttributes();
-                Node node = nnm.getNamedItem("d");
-                //System.out.println("i is "+i);
-
-                PathParser pp = new PathParser();
-                MyPathHandler mph = new MyPathHandler(Float.valueOf(originalWidth), Float.valueOf(originalHeight) , Float.valueOf(targetWidth), Float.valueOf(targetHeight));
-                pp.setPathHandler(mph);
-                pp.parse(node.getTextContent());
-
-                Element path = doc.createElementNS(svgNS, "path");
-                path.setAttributeNS(null, "d",mph.getPath());
-                if (nnm.getNamedItem("style") != null) {
-                    path.setAttribute("style", nnm.getNamedItem("style").getTextContent());
+                parentNode = nl.item(i).getParentNode();
+                // if parent node is a group, ignore it since it was already processed
+                if(!parentNode.getNodeName().equals("g")) {
+                    svg = CustomPathHandler.handlePath(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
                 }
-                if (nnm.getNamedItem("fill") != null) {
-                    path.setAttribute("fill", nnm.getNamedItem("fill").getTextContent());
-                }
-
-                if (nnm.getNamedItem("id") != null) {
-                    path.setAttribute("id", nnm.getNamedItem("id").getTextContent());
-                }
-
-                if (nnm.getNamedItem("class") != null) {
-                    path.setAttribute("class", nnm.getNamedItem("class").getTextContent());
-                }
-                svgRoot.appendChild(path);
-
-                StringWriter sw = new StringWriter();
-                TransformerFactory tf = TransformerFactory.newInstance();
-                Transformer transformer = tf.newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-                transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-                transformer.transform(new DOMSource(path), new StreamResult(sw));
-
-                //System.out.println("unescaped path is"+sw);
-                String pathEscaped = sw.toString().replace("<", "%3C");
-                pathEscaped = pathEscaped.replace(">", "%3E");
-                pathEscaped = pathEscaped.replace("\"", "'");
-                pathEscaped = pathEscaped.replace("#", "%23");
-                pathEscaped = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+targetWidth+"' height='"+targetHeight+"' viewBox='0 0 "+targetWidth+" "+targetHeight+"' "+ pathEscaped + "%3C/svg%3E";
-                //System.out.println("escaped path is "+ pathEscaped);
-
             }
 
             nl = svg.getElementsByTagName("polygon");
             for (int i=0; i < nl.getLength(); i++) {
-                NamedNodeMap nnm = nl.item(i).getAttributes();
-                Node node = nnm.getNamedItem("points");
-
-                PointsParser pp = new PointsParser();
-                MyPointsHandler mph = new MyPointsHandler(Float.valueOf(originalWidth), Float.valueOf(originalHeight) , Float.valueOf(targetWidth), Float.valueOf(targetHeight));
-                pp.setPointsHandler(mph);
-                pp.parse(node.getTextContent());
-
-                Element polygon = doc.createElementNS(svgNS, "polygon");
-                polygon.setAttributeNS(null, "points",mph.getPoints());
-
-                svgRoot.appendChild(polygon);
-
-                StringWriter sw = new StringWriter();
-                TransformerFactory tf = TransformerFactory.newInstance();
-                Transformer transformer = tf.newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-                transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-                transformer.transform(new DOMSource(polygon), new StreamResult(sw));
-
-
-                String polygonEscaped = sw.toString().replace("<", "%3C");
-                polygonEscaped = polygonEscaped.replace(">", "%3E");
-                polygonEscaped = polygonEscaped.replace("\"", "'");
-                polygonEscaped = polygonEscaped.replace("#", "%23");
-                polygonEscaped = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+targetWidth+"' height='"+targetHeight+"' viewBox='0 0 "+targetWidth+" "+targetHeight+"' "+ polygonEscaped + "%3C/svg%3E";
+                parentNode = nl.item(i).getParentNode();
+                // if parent node is a group, ignore it since it was already processed
+                if (!parentNode.getNodeName().equals("g")) {
+                    svg = CustomPathHandler.handlePath(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
+                }
             }
 
             nl = svg.getElementsByTagName("rect");
 
             for (int i=0; i < nl.getLength(); i++) {
-                Element rect = doc.createElementNS(svgNS, "rect");
-                NamedNodeMap nnm = nl.item(i).getAttributes();
-                if (nnm.getNamedItem("x") != null) {
-                    System.out.println("Found rect x " +nnm.getNamedItem("x").getTextContent());
-                    Float x = Float.valueOf(nnm.getNamedItem("x").getTextContent());
-                    Float newX = Float.valueOf(targetWidth)/Float.valueOf(originalWidth) * x;
-                    rect.setAttribute("x", newX.toString());
+                parentNode = nl.item(i).getParentNode();
+                // if parent node is a group, ignore it since it was already processed
+                if (!parentNode.getNodeName().equals("g")) {
+                    svg = RectHandler.transformRect(svg, nl.item(i), originalWidth, originalHeight, targetWidth, targetHeight);
                 }
-
-                if (nnm.getNamedItem("y") != null) {
-                    System.out.println("Found rect y " +nnm.getNamedItem("y").getTextContent());
-                    Float y = Float.valueOf(nnm.getNamedItem("y").getTextContent());
-                    Float newY = Float.valueOf(targetHeight)/Float.valueOf(originalHeight) * y;
-                    rect.setAttribute("y", newY.toString());
-                }
-
-                if (nnm.getNamedItem("width") != null) {
-                    System.out.println("Found rect width "+nnm.getNamedItem("width").getTextContent());
-                    Float width = Float.valueOf(nnm.getNamedItem("width").getTextContent());
-                    Float newWidth = Float.valueOf(targetWidth)/Float.valueOf(originalWidth) * width;
-                    rect.setAttribute("width", newWidth.toString());
-                }
-
-                if (nnm.getNamedItem("height") != null) {
-                    System.out.println("Found rect height "+nnm.getNamedItem("height").getTextContent());
-                    Float height = Float.valueOf(nnm.getNamedItem("height").getTextContent());
-                    Float newHeight = Float.valueOf(targetHeight)/Float.valueOf(originalHeight) * height;
-                    rect.setAttribute("height", newHeight.toString());
-                }
-
-                if (nnm.getNamedItem("class") != null) {
-                    rect.setAttribute("class", nnm.getNamedItem("class").getTextContent());
-                }
-                System.out.println("rect x is "+rect.getAttribute("x"));
-                System.out.println("rect y is "+rect.getAttribute("y"));
-                System.out.println("rect width is "+rect.getAttribute("width"));
-                System.out.println("rect height is "+rect.getAttribute("height"));
-                svgRoot.appendChild(rect);
             }
-
-            System.out.println("Rectangles found "+ nl.getLength() );
 
             StringWriter sw = new StringWriter();
             TransformerFactory tf = TransformerFactory.newInstance();
@@ -243,105 +118,50 @@ public class RescaleImage {
             transformer.setOutputProperty(OutputKeys.METHOD, "xml");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-            transformer.transform(new DOMSource(doc), new StreamResult(sw));
+            transformer.transform(new DOMSource(svg), new StreamResult(sw));
             System.out.println("svg is " + sw.toString());
+
 
             StringBuilder sb = new StringBuilder("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='"+targetWidth+"' height='"+targetHeight+"' viewBox='0 0 "+targetWidth+" "+targetHeight+"' %3E");
 
-            NodeList styles = doc.getElementsByTagName("style");
-            for(int i=0; i < styles.getLength(); i++) {
-                StringWriter writer = new StringWriter();
-                transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.transform(new DOMSource(styles.item(i)), new StreamResult(writer));
-                String output = writer.toString().replace(" xmlns=\"http://www.w3.org/2000/svg\"","");
-
-                //System.out.println("style is "+output);
-                String styleEscaped = output.replace("<", "%3C");
-                styleEscaped = styleEscaped.replace(">", "%3E");
-                styleEscaped = styleEscaped.replace("\"", "'");
-                styleEscaped = styleEscaped.replace("#", "%23");
-                styleEscaped = styleEscaped.replace("\n", "");
-                styleEscaped = styleEscaped.replace("\r", "");
-                sb.append(styleEscaped);
-                //System.out.println("sb is now "+ sb);
+            String svgString = sw.toString();
+            // Look for original svg start tag and remove it
+            Pattern pattern = Pattern.compile("(.*)(<svg[^>]+>)(.*)", Pattern.DOTALL);
+            Matcher matcher = pattern.matcher(svgString);
+            boolean matchFound = matcher.find();
+            if(matchFound) {
+                svgString = matcher.group(1) + matcher.group(3);
+            } else {
+                System.out.println("Match not found");
             }
 
-            NodeList polygons = doc.getElementsByTagName("polygon");
-            for(int i=0; i < polygons.getLength(); i++) {
-                StringWriter writer = new StringWriter();
-                transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.transform(new DOMSource(polygons.item(i)), new StreamResult(writer));
-                String output = writer.toString().replace(" xmlns=\"http://www.w3.org/2000/svg\"","");
-
-                String polygonEscaped = output.replace("<", "%3C");
-                polygonEscaped = polygonEscaped.replace(">", "%3E");
-                polygonEscaped = polygonEscaped.replace("\"", "'");
-                polygonEscaped = polygonEscaped.replace("#", "%23");
-                sb.append(polygonEscaped);
+            // Look for comments in the svg and remove them as well
+            pattern = Pattern.compile("(.*)(<!--[^>]+>)(.*)", Pattern.DOTALL);
+            matcher = pattern.matcher(svgString);
+            matchFound = matcher.find();
+            if(matchFound) {
+                svgString = matcher.group(1) + matcher.group(3);
+            } else {
+                System.out.println("Match not found");
             }
 
-            NodeList circles = doc.getElementsByTagName("circle");
-            for(int i=0; i < circles.getLength(); i++) {
-                StringWriter writer = new StringWriter();
-                transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.transform(new DOMSource(circles.item(i)), new StreamResult(writer));
-                String output = writer.toString().replace(" xmlns=\"http://www.w3.org/2000/svg\"","");
+            svgString = svgString.replace("<", "%3C")
+                     .replace(">", "%3E")
+                     .replace("\"", "'")
+                     .replace("#", "%23")
+                     .replace("{", "%7B")
+                     .replace("}", "%7D")
+                     .replace("\n", "")
+                     .replace("\r", "")
+                     .replace("\t", " ");
 
-                String circleEscaped = output.replace("<", "%3C");
-                circleEscaped = circleEscaped.replace(">", "%3E");
-                circleEscaped = circleEscaped.replace("\"", "'");
-                circleEscaped = circleEscaped.replace("#", "%23");
-                System.out.println("Found circle"+circleEscaped);
-                sb.append(circleEscaped);
-            }
-
-            NodeList paths = doc.getElementsByTagName("path");
-;           for(int i=0; i < paths.getLength(); i++) {
-                //String path = paths.item(i).toString();
-
-                StringWriter writer = new StringWriter();
-                transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.transform(new DOMSource(paths.item(i)), new StreamResult(writer));
-                String output = writer.toString().replace(" xmlns=\"http://www.w3.org/2000/svg\"","");
-
-                //System.out.println("path is "+output);
-                String pathEscaped = output.replace("<", "%3C");
-                pathEscaped = pathEscaped.replace(">", "%3E");
-                pathEscaped = pathEscaped.replace("\"", "'");
-                pathEscaped = pathEscaped.replace("#", "%23");
-                sb.append(pathEscaped);
-                //pathEscaped = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' "+ pathEscaped + "%3C/svg%3E";
-                //System.out.println("sb is now "+ sb);
-            }
-
-            NodeList rects = doc.getElementsByTagName("rect");
-            for(int i=0; i < rects.getLength(); i++) {
-                System.out.println("Found rect");
-                StringWriter writer = new StringWriter();
-                transformer = TransformerFactory.newInstance().newTransformer();
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-                transformer.transform(new DOMSource(rects.item(i)), new StreamResult(writer));
-                String output = writer.toString().replace(" xmlns=\"http://www.w3.org/2000/svg\"","");
-
-                String rectEscaped = output.replace("<", "%3C");
-                rectEscaped = rectEscaped.replace(">", "%3E");
-                rectEscaped = rectEscaped.replace("\"", "'");
-                rectEscaped = rectEscaped.replace("#", "%23");
-                System.out.println("Found rect"+rectEscaped);
-                sb.append(rectEscaped);
-            }
-            sb.append("%3C/svg%3E");
+            sb.append(svgString);
 
             File file = new File(elementTemplateLocation);
             String content = FileUtils.readFileToString(file, "utf-8");
 
-            // Get array of element templates and see if it exists to overwrite
+            // Get array of element templates  and see if entries exist to overwrite
             JSONArray jsonArray = new JSONArray(content);
-            //System.out.println("JSON is "+jsonArray.toString());
             ListIterator iter = jsonArray.toList().listIterator();
             while(iter.hasNext()){
                 int index = iter.nextIndex();
@@ -354,15 +174,14 @@ public class RescaleImage {
                     //Overwrite existing entry
                     jsonArray.remove(index);
 
-                    jsonArray = addOrUpdateArray(jsonArray,index, templateName, templateId, appliesTo, sb, templateMatch);
-
+                    jsonArray = ElementTemplateHandler.addOrUpdateArray(jsonArray,index, templateName, templateId, appliesTo, sb, templateMatch);
                 }
 
             }
 
             if (!templateMatch){
                 //Add entry in element templates
-                jsonArray = addOrUpdateArray(jsonArray,0 , templateName, templateId, appliesTo, sb, templateMatch);
+                jsonArray = ElementTemplateHandler.addOrUpdateArray(jsonArray,0 , templateName, templateId, appliesTo, sb, templateMatch);
             }
 
             //Write to file
@@ -381,52 +200,5 @@ public class RescaleImage {
             String sStackTrace = sw.toString(); // stack trace as a string
             System.out.println("Uh oh "+sStackTrace);
         }
-    }
-
-    private static JSONArray addOrUpdateArray(JSONArray jsonArray, int index, String templateName, String templateId, String appliesTo, StringBuilder sb, boolean templateMatch) {
-
-        //Create new Object
-        JSONObject updatedEntry = new JSONObject();
-        updatedEntry.put("$schema", "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json");
-        updatedEntry.put("name", templateName);
-        updatedEntry.put("id", templateId);
-        updatedEntry.put("description", templateName);
-        updatedEntry.put("documentationRef", "https://docs.camunda.io");
-
-        JSONArray appliesToArray = new JSONArray();
-        appliesToArray.put(appliesTo);
-        updatedEntry.put("appliesTo", appliesToArray);
-
-        JSONObject value = new JSONObject();
-        value.put("value", appliesTo);
-        updatedEntry.put("elementType", value);
-
-        JSONObject contents = new JSONObject();
-        contents.put("contents", sb.toString());
-        updatedEntry.put("icon", contents);
-
-        JSONObject propertiesValues = new JSONObject();
-        propertiesValues.put("type", "String");
-        propertiesValues.put("value", templateName);
-
-        JSONObject bindingsValues = new JSONObject();
-        bindingsValues.put("type", "property");
-        bindingsValues.put("name", "name");
-
-        propertiesValues.put("binding", bindingsValues);
-
-        JSONArray properties = new JSONArray();
-        properties.put(propertiesValues);
-
-        updatedEntry.put("properties", properties);
-
-        //Put back or add into original array
-        if(templateMatch) {
-            jsonArray.put(index, updatedEntry);
-        } else {
-            jsonArray.put(updatedEntry);
-        }
-
-        return jsonArray;
     }
 }
