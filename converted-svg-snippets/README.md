@@ -2,7 +2,7 @@
 If you don't want to run the SVGs through the converter you can simply copy and paste these snippets into the ```contents``` of your Element Template entry. They have been created at a icon width of 18px. Click on image to be brought to the Element Template SVG snippet.
 
 | Camunda Logos | Coffee | For the dogs | For the cats | Other |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: |
 |[![](./thumbnails/CamundaLogo.png)](./CamundaLogo.txt)|[![](./thumbnails/coffeeCup.png)](./coffeeCup.txt)|[![](./thumbnails/dogFoodBowl.png)](./dogFoodBowl.txt)|[![](./thumbnails/catFoodBowl.png)](./catFoodBowl.txt)| |
 |[![](./thumbnails/orangeCamundaLogo.png)](./orangeCamundaLogo.txt)|[![](./thumbnails/greyCoffeeCup.png)](./GreyCoffeeCup.txt)|[![](./thumbnails/tealDogFoodBowl.png)](./tealDogFoodBowl.txt)|[![](./thumbnails/orangeCatFoodBowl.png)](./catFoodBowl.txt)| |
 |*Classic animated\!*<br> [![](./thumbnails/CamundaClassicLogoAnimated.png)](./CamundaClassicLogoAnimated.txt)|[![](./thumbnails/coffeeCircle.png)](./coffeeCircle.txt)|[![](./thumbnails/dogBone.png)](./dogBone.txt)|[![](./thumbnails/fishTreat.png)](./fishTreat.txt)| |
