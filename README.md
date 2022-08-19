@@ -1,7 +1,7 @@
 # Element Template SVG Converter
 Takes SVGs and converts them for use in Camunda Modeler Element Templates
 
-The main class is src/main/java/org/vg/utilities/RescaleImage
+The main class is src/main/java/org/svg/utilities/RescaleImage
 
 Arguments to pass into the main class:
 
