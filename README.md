@@ -10,7 +10,7 @@ Arguments to pass into the main class:
 The goal is to create a stable of SVG icons for the community and have a converter for folks to create their own.
 
 # Converted SVGs
-If you don't want to run the SVGs through the converter you can simply copy and paste these ready made snippets into the ```contents``` of your Element Template entry. They have been created at a icon width of 18px. Click on image to be brought to the Element Template SVG snippet.
+If you don't want to run the SVGs through the converter you can simply copy and paste these ready made snippets into the ```icon: { contents``` portion of your Element Template entry. They have been created at a width of 18px. Click on image to be brought to the Element Template SVG snippet.
 
 | Camunda Logos | Coffee | For the dogs | For the cats | Other |
 | :---: | :---: | :---: | :---: | :---: |
