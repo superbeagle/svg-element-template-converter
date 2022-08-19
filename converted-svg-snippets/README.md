@@ -30,7 +30,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 	}
 ```
 
-![](./thumbnails/CamundaClassicLogoAnimated.png) [Camunda classic logo animated](./CamundaClassicLogo.txt)\
+![](./thumbnails/CamundaClassicLogoAnimated.png) [Camunda classic logo animated](./CamundaClassicLogoAnimated.txt)\
 ![](./thumbnails/coffeeCircleYellow.png) Coffee circle\
 ![](./thumbnails/catFoodBowl.png) Cat food bowl\
 ![](./thumbnails/fishTreat.png) Fish treat\
