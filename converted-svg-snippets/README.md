@@ -1,5 +1,5 @@
 # Converted SVGs
-If you don't want to run the SVGs through the converter you can simply copy and paste these into the ```contents``` of your Element Template entry. For example:
+If you don't want to run the SVGs through the converter you can simply copy and paste these into the ```contents``` of your Element Template entry. These have been created at a icon width of 18px. An example of its use in an Element Template entry:
 
 ```
 {
@@ -30,5 +30,8 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 	}
 ```
 
-
-![](./thumbnail-svgs/catFoodBowl.svg) Cat Food Bowl
+![](./thumbnails/CamundaClassicLogoAnimated.png) [Camunda classic logo animated](/CamundaClassicLogo.txt)
+![](./thumbnails/coffeeCircleYellow.png) Coffee circle
+![](./thumbnails/catFoodBowl.png) Cat food bowl
+![](./thumbnails/fishTreat.png) Fish treat
+![](./thumbnails/orangeFishTreat.png) Orange fish treat
