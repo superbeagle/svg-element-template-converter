@@ -22,13 +22,13 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> Camundamojis </h2>
 
 | <div style="width:150px">Happy</div> | <div style="width:150px">Neutral</div>|<div style="width:150px">Concerned</div>|<div style="width:150px">Mad</div>|
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 |[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|
 
 <h2> Friends </h2>
 
 | <div style="width:150px">Extraterrestrial </div> | <div style="width:150px">Blue Robot</div>|<div style="width:150px">Yellow Robot</div>|<div style="width:150px">Green Monster</div>|<div style="width:150px">Orange Monster</div>|
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: |
 |[![](./svgs/Friendly-Alien.svg)](./converted-svg-snippets/alien.txt)|[![](./svgs/Robot-Blue.svg)](./converted-svg-snippets/blueRobot.txt)|[![](./svgs/Robot-Yellow.svg)](./converted-svg-snippets/yellowRobot.txt)|[![](./svgs/Monster-Green.svg)](./converted-svg-snippets/greenMonster.txt)|[![](./svgs/Monster-Orange.svg)](./converted-svg-snippets/orangeMonster.txt)|
 
 <h2> Coffee </h2>
