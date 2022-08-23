@@ -16,7 +16,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> Camunda Logos </h2>
 
 | <div style="width:150px">Black</div> | <div style="width:150px">Orange</div>|<div style="width:150px">28px wide</div>|<div style="width:150px">Animated Classic</div>|<div style="width:150px">Classic</div>|
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: |
 |[![](./svgs/new-camunda-logo.svg)](./converted-svg-snippets/CamundaLogo.txt)|[![](./svgs/new-camunda-logo-orange.svg)](./converted-svg-snippets/orangeCamundaLogo.txt)|[![](./svgs/Logo_Black.svg)](./converted-svg-snippets/camunda.txt)| [![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./svgs/old-camunda-logo.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)|
 
 <h2> Camundamojis </h2>
@@ -40,7 +40,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> Other logos </h2>
 
 |<div style="width:150px">Github</div>|<div style="width:150px">Slack</div>|<div style="width:150px">Stack Overflow</div>|<div style="width:150px">Twitter</div>|<div style="width:150px">YouTube</div>|<div style="width:150px">Facebook</div>|
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 |[![](./svgs/github_black.svg)](./converted-svg-snippets/github_black.txt)|[![](./svgs/slack_black.svg)](./converted-svg-snippets/slack_black.txt)|[![](./svgs/stack-overflow_black.svg)](./converted-svg-snippets/stack-overflow_black.txt)|[![](./svgs/twitter_black.svg)](./converted-svg-snippets/twitter_black.txt)|[![](./svgs/youtube_black.svg)](./converted-svg-snippets/youtube_black.txt)|[![](./svgs/facebook_black.svg)](./converted-svg-snippets/facebook_black.txt)|
 
 
