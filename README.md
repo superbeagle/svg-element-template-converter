@@ -20,8 +20,12 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 |[![](./svgs/new-camunda-logo.svg)](./converted-svg-snippets/CamundaLogo.txt)|[![](./svgs/new-camunda-logo-orange.svg)](./converted-svg-snippets/orangeCamundaLogo.txt)|[![](./svgs/Logo_Black.svg)](./converted-svg-snippets/camunda.txt)| [![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./svgs/old-camunda-logo.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)|
 
 <h2> Camundamojis </h2>
+<table>
+<tr><td width="150px" align=center><b>Happy</b></td><td width="150px" align=center><b>Neutral</b></td><td width="150px" align=center><b>Concerned</b></td><td width="150px" align=center><b>Mad</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/happy.txt"><img src="./svgs/Emoji-Happy-Yes.svg"></a></td><td><img src="./svgs/Emoji-Neutral.svg"></td><td><img src="./svgs/Emoji-Concerned.svg"></td><td><img src="./svgs/Emoji-Mad-No.svg"></td></tr>
+<table>
 
-|&nbsp-sHappy|Neutral|Concerned|Mad|
+|Happy|Neutral|Concerned|Mad|
 | --------------- | --------------- | --------------- | --------------- |
 |[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|
 
