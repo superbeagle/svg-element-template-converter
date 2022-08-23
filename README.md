@@ -12,13 +12,55 @@ The goal is to create a stable of SVG icons for the community and have a convert
 # Converted SVGs
 If you don't want to run the SVGs through the converter you can simply copy and paste these ready made snippets into the ```icon: { contents``` portion of your Element Template entry. They have been created at a width of 18px. Click on image to be brought to the Element Template SVG snippet.
 
-| Camunda Logos | Camundamojis | Friends | Coffee | For the dogs | For the cats | Other |
+
+<h2> Camunda Logos </h2>
+
+| <div style="width:150px">Black</div> | <div style="width:150px">Orange</div>|<div style="width:150px">28px wide</div>|<div style="width:150px">Animated Classic</div>|<div style="width:150px">Classic</div>|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|[![](./svgs/new-camunda-logo.svg)](./converted-svg-snippets/CamundaLogo.txt)|[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Friendly-Alien.svg)](./converted-svg-snippets/alien.txt)|[![](./svgs/coffee-cup.svg)](./converted-svg-snippets/coffeeCup.txt)|[![](./svgs/dog-food-bowl.svg)](./converted-svg-snippets/dogFoodBowl.txt)|[![](./svgs/cat-food-bowl.svg)](./converted-svg-snippets/catFoodBowl.txt)|[![](./svgs/question-mark.svg)](./converted-svg-snippets/questionMark.txt)|
-|[![](./svgs/new-camunda-logo-orange.svg)](./converted-svg-snippets/orangeCamundaLogo.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Robot-Blue.svg)](./converted-svg-snippets/blueRobot.txt)|[![](./svgs/coffee-cup-grey.svg)](./converted-svg-snippets/greyCoffeeCup.txt)|[![](./svgs/dog-food-bowl-teal.svg)](./converted-svg-snippets/tealDogFoodBowl.txt)|[![](./svgs/cat-food-bowl-orange.svg)](./converted-svg-snippets/catFoodBowl.txt)| [![](./svgs/question-mark-blue.svg)](./converted-svg-snippets/blueQuestionMark.txt) |
-|*28px wide*<br>[![](./svgs/Logo_Black.svg)](./converted-svg-snippets/camunda.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Robot-Yellow.svg)](./converted-svg-snippets/yellowRobot.txt)|[![](./svgs/coffee-circle.svg)](./converted-svg-snippets/coffeeCircle.txt)|[![](./svgs/dog-food-bone.svg)](./converted-svg-snippets/dogBone.txt)|[![](./svgs/cat-food-fish-bone.svg)](./converted-svg-snippets/fishTreat.txt)| |
-|*Classic animated\!*<br> [![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|[![](./svgs/Monster-Green.svg)](./converted-svg-snippets/greenMonster.txt)|[![](./svgs/coffee-circle-yellow.svg)](./converted-svg-snippets/yellowCoffeeCircle.txt)|[![](./svgs/dog-food-bone-teal.svg)](./converted-svg-snippets/tealDogBone.txt)|[![](./svgs/cat-food-fish-bone-orange.svg)](./converted-svg-snippets/orangeFishTreat.txt)||
-|*Classic*<br> [![](./svgs/old-camunda-logo.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)||[![](./svgs/Monster-Orange.svg)](./converted-svg-snippets/orangeMonster.txt)||||||
+|[![](./svgs/new-camunda-logo.svg)](./converted-svg-snippets/CamundaLogo.txt)|[![](./svgs/new-camunda-logo-orange.svg)](./converted-svg-snippets/orangeCamundaLogo.txt)|[![](./svgs/Logo_Black.svg)](./converted-svg-snippets/camunda.txt)| [![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./svgs/old-camunda-logo.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)|
+
+<h2> Camundamojis </h2>
+
+| <div style="width:150px">Happy</div> | <div style="width:150px">Neutral</div>|<div style="width:150px">Concerned</div>|<div style="width:150px">Mad</div>|
+| :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|
+
+<h2> Friends </h2>
+
+| <div style="width:150px">Extraterrestrial </div> | <div style="width:150px">Blue Robot</div>|<div style="width:150px">Yellow Robot</div>|<div style="width:150px">Green Monster</div>|<div style="width:150px">Orange Monster</div>|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/Friendly-Alien.svg)](./converted-svg-snippets/alien.txt)|[![](./svgs/Robot-Blue.svg)](./converted-svg-snippets/blueRobot.txt)|[![](./svgs/Robot-Yellow.svg)](./converted-svg-snippets/yellowRobot.txt)|[![](./svgs/Monster-Green.svg)](./converted-svg-snippets/greenMonster.txt)|[![](./svgs/Monster-Orange.svg)](./converted-svg-snippets/orangeMonster.txt)|
+
+<h2> Coffee </h2>
+
+| <div style="width:150px">Coffee cup</div> | <div style="width:150px">Grey coffee cup</div>|<div style="width:150px">Coffee circle</div>|<div style="width:150px">Yellow coffee circle</div>|
+| :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/coffee-cup.svg)](./converted-svg-snippets/coffeeCup.txt)|[![](./svgs/coffee-cup-grey.svg)](./converted-svg-snippets/greyCoffeeCup.txt)|[![](./svgs/coffee-circle.svg)](./converted-svg-snippets/coffeeCircle.txt)|[![](./svgs/coffee-circle-yellow.svg)](./converted-svg-snippets/yellowCoffeeCircle.txt)|
+
+<h2> Other logos </h2>
+
+|<div style="width:150px">Github</div>|<div style="width:150px">Slack</div>|<div style="width:150px">Stack Overflow</div>|<div style="width:150px">Twitter</div>|<div style="width:150px">YouTube</div>|<div style="width:150px">Facebook</div>|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/github_black.svg)](./converted-svg-snippets/github_black.txt)|[![](./svgs/slack_black.svg)](./converted-svg-snippets/slack_black.txt)|[![](./svgs/stack-overflow_black.svg)](./converted-svg-snippets/stack-overflow_black.txt)|[![](./svgs/twitter_black.svg)](./converted-svg-snippets/twitter_black.txt)|[![](./svgs/youtube_black.svg)](./converted-svg-snippets/youtube_black.txt)|[![](./svgs/facebook_black.svg)](./converted-svg-snippets/facebook_black.txt)|
+
+
+<h2> For the dogs </h2>
+
+| <div style="width:150px">Dog food bowl</div> | <div style="width:150px">Teal dog food bowl</div>|<div style="width:150px">Dog bone</div>|<div style="width:150px">Teal dog bone</div>|
+| :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/dog-food-bowl.svg)](./converted-svg-snippets/dogFoodBowl.txt)|[![](./svgs/dog-food-bowl-teal.svg)](./converted-svg-snippets/tealDogFoodBowl.txt)|[![](./svgs/dog-food-bone.svg)](./converted-svg-snippets/dogBone.txt)|[![](./svgs/dog-food-bone-teal.svg)](./converted-svg-snippets/tealDogBone.txt)|
+
+<h2> For the cats </h2>
+
+| <div style="width:150px">Cat food bowl</div> | <div style="width:150px">Orange cat food bowl</div>|<div style="width:150px">Cat treat</div>|<div style="width:150px">Orange cat treat</div>|
+| :---: | :---: | :---: | :---: | :---: |
+|[![](./svgs/cat-food-bowl.svg)](./converted-svg-snippets/catFoodBowl.txt)|[![](./svgs/cat-food-bowl-orange.svg)](./converted-svg-snippets/orangeCatFoodBowl.txt)|[![](./svgs/cat-food-fish-bone.svg)](./converted-svg-snippets/fishTreat.txt)|[![](./svgs/cat-food-fish-bone-orange.svg)](./converted-svg-snippets/orangeFishTreat.txt)|
+
+<h2> Huh? </h2>
+
+| <div style="width:150px">Question mark</div> | <div style="width:150px">Blue question mark</div>|
+| :---: | :---: |
+|[![](./svgs/question-mark.svg)](./converted-svg-snippets/questionMark.txt)|[![](./svgs/question-mark-blue.svg)](./converted-svg-snippets/blueQuestionMark.txt)|
 
 
 An example of its use in an Element Template entry (see contents):
