@@ -27,18 +27,19 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <tr><td><a href="./converted-svg-snippets/happy.txt"><img src="./svgs/Emoji-Happy-Yes.svg"></a></td><td><a href="./converted-svg-snippets/meh.txt"><img src="./svgs/Emoji-Neutral.svg"></a></td><td><a href="./converted-svg-snippets/emojiConcerned.txt"><img src="./svgs/Emoji-Concerned.svg"></a></td><td><a href="./converted-svg-snippets/mad.txt"><img src="./svgs/Emoji-Mad-No.svg"></a></td></tr>
 <table>
 
-
 <h2> Friends </h2>
 
-| <div style="width:150px">Extraterrestrial </div> | <div style="width:150px">Blue Robot</div>|<div style="width:150px">Yellow Robot</div>|<div style="width:150px">Green Monster</div>|<div style="width:150px">Orange Monster</div>|
-| :---: | :---: | :---: | :---: | :---: |
-|[![](./svgs/Friendly-Alien.svg)](./converted-svg-snippets/alien.txt)|[![](./svgs/Robot-Blue.svg)](./converted-svg-snippets/blueRobot.txt)|[![](./svgs/Robot-Yellow.svg)](./converted-svg-snippets/yellowRobot.txt)|[![](./svgs/Monster-Green.svg)](./converted-svg-snippets/greenMonster.txt)|[![](./svgs/Monster-Orange.svg)](./converted-svg-snippets/orangeMonster.txt)|
+<table>
+<tr><td width="150px" align=center><b>Extraterrestrial</b></td><td width="150px" align=center><b>Blue Robot</b></td><td width="150px" align=center><b>Yellow Robot</b></td><td width="150px" align=center><b>Green Monster</b></td><td width="150px" align=center><b>Orange Monster</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/alien.txt"><img src="./svgs/Friendly-Alien.svg"></a></td><td><a href="./converted-svg-snippets/blueRobot.txt"><img src="./svgs/Robot-Blue.svg"></a></td><td><a href="./converted-svg-snippets/yellowRobot.txt"><img src="./svgs/Robot-Yellow.svg"></a></td><td><a href="./converted-svg-snippets/greenMonster.txt"><img src="./svgs/Monster-Green.svg"></a></td><td><a href="./converted-svg-snippets/orangeMonster.txt"><img src="./svgs/Monster-Orange.svg"></a></td></tr>
+<table>
 
 <h2> Coffee </h2>
 
-| <div style="width:150px">Coffee cup</div> | <div style="width:150px">Grey coffee cup</div>|<div style="width:150px">Coffee circle</div>|<div style="width:150px">Yellow coffee circle</div>|
-| :---: | :---: | :---: | :---: |
-|[![](./svgs/coffee-cup.svg)](./converted-svg-snippets/coffeeCup.txt)|[![](./svgs/coffee-cup-grey.svg)](./converted-svg-snippets/greyCoffeeCup.txt)|[![](./svgs/coffee-circle.svg)](./converted-svg-snippets/coffeeCircle.txt)|[![](./svgs/coffee-circle-yellow.svg)](./converted-svg-snippets/yellowCoffeeCircle.txt)|
+<table>
+<tr><td width="150px" align=center><b>Coffee cup</b></td><td width="150px" align=center><b>Grey coffee cup</b></td><td width="150px" align=center><b>Coffee circle</b></td><td width="150px" align=center><b>Yellow coffee circle</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/coffeeCup.txt"><img src="./svgs/coffee-cup.svg"></a></td><td><a href="./converted-svg-snippets/greyCoffeeCup.txt"><img src="./svgs/coffee-cup-grey.svg"></a></td><td><a href="./converted-svg-snippets/coffeeCircle.txt"><img src="./svgs/coffee-circle.svg"></a></td><td><a href="./converted-svg-snippets/yellowCoffeeCircle.txt"><img src="./svgs/coffee-circle-yellow.svg"></a></td></tr>
+<table>
 
 <h2> Other logos </h2>
 
