@@ -66,7 +66,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 
 <table>
 <tr><td width="150px" align=center><b>Question mark</b></td><td width="150px" align=center><b>Blue question mark</b></td></tr>
-<tr><td><a href="./converted-svg-snippets/queastionMark.txt"><img src="./svgs/question-mark.svg"></a></td><td><a href="./converted-svg-snippets/blueQuestionMark.txt"><img src="./svgs/question-mark-blue.svg"></a></td></tr>
+<tr><td><a href="./converted-svg-snippets/questionMark.txt"><img src="./svgs/question-mark.svg"></a></td><td><a href="./converted-svg-snippets/blueQuestionMark.txt"><img src="./svgs/question-mark-blue.svg"></a></td></tr>
 <table>
 
 An example of its use in an Element Template entry (see contents):
