@@ -17,7 +17,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 
 <table>
 <tr><td width="150px" align=center><b>Black</b></td><td width="150px" align=center><b>Orange</b></td><td width="150px" align=center><b>28px wide</b></td><td width="150px" align=center><b>Animated Classic</b></td><td width="150px" align=center><b>Classic</b></td></tr>
-<tr><td><a href="./converted-svg-snippets/CamundaLogo.txt"><img src="./svgs/new-camunda-logo.svg"></a></td><td><a href="./converted-svg-snippets/orangeCamundaLogo.txt"><img src="./svgs/new-camunda-logo-orange.svg"></a></td><td><a href="./converted-svg-snippets/camunda.txt"><img src="./svgs/Logo_black.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogoAnimated.txt"><img src="./svgs/old-logo-animated_CSS.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogo.txt"><img src="./svgs/old-camunda-logo.svg"></a></td></tr>
+<tr><td><a href="./converted-svg-snippets/CamundaLogo.txt"><img src="./svgs/new-camunda-logo.svg"></a></td><td><a href="./converted-svg-snippets/orangeCamundaLogo.txt"><img src="./svgs/new-camunda-logo-orange.svg"></a></td><td><a href="./converted-svg-snippets/camunda.txt"><img src="./svgs/Logo_Black.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogoAnimated.txt"><img src="./svgs/old-logo-animated_CSS.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogo.txt"><img src="./svgs/old-camunda-logo.svg"></a></td></tr>
 <table>
 
 <h2> Camundamojis </h2>
