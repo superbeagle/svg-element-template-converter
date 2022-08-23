@@ -20,6 +20,11 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 |*Classic animated\!*<br> [![](./converted-svg-snippets/thumbnails/CamundaClassicLogoAnimated.png)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./converted-svg-snippets/thumbnails/mad.png)](./converted-svg-snippets/mad.txt)|[![](./converted-svg-snippets/thumbnails/greenMonster.png)](./converted-svg-snippets/greenMonster.txt)|[![](./converted-svg-snippets/thumbnails/yellowCoffeeCircle.png)](./converted-svg-snippets/yellowCoffeeCircle.txt)|[![](./converted-svg-snippets/thumbnails/tealDogBone.png)](./converted-svg-snippets/tealDogBone.txt)|[![](./converted-svg-snippets/thumbnails/orangeFishTreat.png)](./converted-svg-snippets/orangeFishTreat.txt)||
 |*Classic*<br> [![](./converted-svg-snippets/thumbnails/CamundaClassicLogo.png)](./converted-svg-snippets/CamundaClassicLogo.txt)||[![](./converted-svg-snippets/thumbnails/orangeMonster.png)](./converted-svg-snippets/orangeMonster.txt)||||||
 
+| Test |
+| :---: |
+|[![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)
+
+
 
 An example of its use in an Element Template entry (see contents):
 
