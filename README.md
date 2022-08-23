@@ -15,19 +15,18 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 
 <h2> Camunda Logos </h2>
 
-| <div style="width:150px">Black</div> | <div style="width:150px">Orange</div>|<div style="width:150px">28px wide</div>|<div style="width:150px">Animated Classic</div>|<div style="width:150px">Classic</div>|
-| :---: | :---: | :---: | :---: | :---: |
-|[![](./svgs/new-camunda-logo.svg)](./converted-svg-snippets/CamundaLogo.txt)|[![](./svgs/new-camunda-logo-orange.svg)](./converted-svg-snippets/orangeCamundaLogo.txt)|[![](./svgs/Logo_Black.svg)](./converted-svg-snippets/camunda.txt)| [![](./svgs/old-logo-animated_CSS.svg)](./converted-svg-snippets/CamundaClassicLogoAnimated.txt)|[![](./svgs/old-camunda-logo.svg)](./converted-svg-snippets/CamundaClassicLogo.txt)|
+<table>
+<tr><td width="150px" align=center><b>Black</b></td><td width="150px" align=center><b>Orange</b></td><td width="150px" align=center><b>28px wide</b></td><td width="150px" align=center><b>Animated Classic</b></td><td width="150px" align=center><b>Classic</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/CamundaLogo.txt"><img src="./svgs/new-camunda-logo.svg"></a></td><td><a href="./converted-svg-snippets/orangeCamundaLogo.txt"><img src="./svgs/new-camunda-logo-orange.svg"></a></td><td><a href="./converted-svg-snippets/camunda.txt"><img src="./svgs/Logo_black.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogoAnimated.txt"><img src="./svgs/old-logo-animated_CSS.svg"></a></td><td><a href="./converted-svg-snippets/CamundaClassicLogo.txt"><img src="./svgs/old-camunda-logo.svg"></a></td></tr>
+<table>
 
 <h2> Camundamojis </h2>
+
 <table>
 <tr><td width="150px" align=center><b>Happy</b></td><td width="150px" align=center><b>Neutral</b></td><td width="150px" align=center><b>Concerned</b></td><td width="150px" align=center><b>Mad</b></td></tr>
-<tr><td><a href="./converted-svg-snippets/happy.txt"><img src="./svgs/Emoji-Happy-Yes.svg"></a></td><td><img src="./svgs/Emoji-Neutral.svg"></td><td><img src="./svgs/Emoji-Concerned.svg"></td><td><img src="./svgs/Emoji-Mad-No.svg"></td></tr>
+<tr><td><a href="./converted-svg-snippets/happy.txt"><img src="./svgs/Emoji-Happy-Yes.svg"></a></td><td><a href="./converted-svg-snippets/meh.txt"><img src="./svgs/Emoji-Neutral.svg"></a></td><td><a href="./converted-svg-snippets/emojiConcerned.txt"><img src="./svgs/Emoji-Concerned.svg"></a></td><td><a href="./converted-svg-snippets/mad.txt"><img src="./svgs/Emoji-Mad-No.svg"></a></td></tr>
 <table>
 
-|Happy|Neutral|Concerned|Mad|
-| --------------- | --------------- | --------------- | --------------- |
-|[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|
 
 <h2> Friends </h2>
 
