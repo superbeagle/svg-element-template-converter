@@ -21,8 +21,8 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 
 <h2> Camundamojis </h2>
 
-| Happy        | Neutral      |Concerned     | Mad          |
-| :----------: | :----------: | :----------: | :----------: |
+|Happy|Neutral|Concerned|Mad|
+| --------------- | --------------- | --------------- | --------------- |
 |[![](./svgs/Emoji-Happy-Yes.svg)](./converted-svg-snippets/happy.txt)|[![](./svgs/Emoji-Neutral.svg)](./converted-svg-snippets/meh.txt)|[![](./svgs/Emoji-Concerned.svg)](./converted-svg-snippets/emojiConcerned.txt)|[![](./svgs/Emoji-Mad-No.svg)](./converted-svg-snippets/mad.txt)|
 
 <h2> Friends </h2>
@@ -62,6 +62,10 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 | :---: | :---: |
 |[![](./svgs/question-mark.svg)](./converted-svg-snippets/questionMark.txt)|[![](./svgs/question-mark-blue.svg)](./converted-svg-snippets/blueQuestionMark.txt)|
 
+| Something | Else |
+|---------------|------------------------------------------------------------------------------------------------------|
+| Short | This is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer |
+| Short | |
 
 An example of its use in an Element Template entry (see contents):
 
