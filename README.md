@@ -43,33 +43,31 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 
 <h2> Other logos </h2>
 
-|<div style="width:150px">Github</div>|<div style="width:150px">Slack</div>|<div style="width:150px">Stack Overflow</div>|<div style="width:150px">Twitter</div>|<div style="width:150px">YouTube</div>|<div style="width:150px">Facebook</div>|
-| :---: | :---: | :---: | :---: | :---: | :---: |
-|[![](./svgs/github_black.svg)](./converted-svg-snippets/github_black.txt)|[![](./svgs/slack_black.svg)](./converted-svg-snippets/slack_black.txt)|[![](./svgs/stack-overflow_black.svg)](./converted-svg-snippets/stack-overflow_black.txt)|[![](./svgs/twitter_black.svg)](./converted-svg-snippets/twitter_black.txt)|[![](./svgs/youtube_black.svg)](./converted-svg-snippets/youtube_black.txt)|[![](./svgs/facebook_black.svg)](./converted-svg-snippets/facebook_black.txt)|
-
+<table>
+<tr><td width="150px" align=center><b>Github</b></td><td width="150px" align=center><b>Slack</b></td><td width="150px" align=center><b>Stack Overflow</b></td><td width="150px" align=center><b>Twitter</b></td><td width="150px" align=center><b>YouTube</b></td><td width="150px" align=center><b>Facebook</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/github_black.txt"><img src="./svgs/github_black.svg"></a></td><td><a href="./converted-svg-snippets/slack_black.txt"><img src="./svgs/slack_black.svg"></a></td><td><a href="./converted-svg-snippets/stack-overflow_black.txt"><img src="./svgs/stack-overflow_black.svg"></a></td><td><a href="./converted-svg-snippets/twitter_black.txt"><img src="./svgs/twitter_black.svg"></a></td><td><a href="./converted-svg-snippets/youtube_black.txt"><img src="./svgs/youtube_black.svg"></a></td><td><a href="./converted-svg-snippets/facebook_black.txt"><img src="./svgs/facebook_black.svg"></a></td></tr>
+<table>
 
 <h2> For the dogs </h2>
 
-| <div style="width:150px">Dog food bowl</div> | <div style="width:150px">Teal dog food bowl</div>|<div style="width:150px">Dog bone</div>|<div style="width:150px">Teal dog bone</div>|
-| :---: | :---: | :---: | :---: |
-|[![](./svgs/dog-food-bowl.svg)](./converted-svg-snippets/dogFoodBowl.txt)|[![](./svgs/dog-food-bowl-teal.svg)](./converted-svg-snippets/tealDogFoodBowl.txt)|[![](./svgs/dog-food-bone.svg)](./converted-svg-snippets/dogBone.txt)|[![](./svgs/dog-food-bone-teal.svg)](./converted-svg-snippets/tealDogBone.txt)|
+<table>
+<tr><td width="150px" align=center><b>Dog food bowl</b></td><td width="150px" align=center><b>Teal dog food bowl</b></td><td width="150px" align=center><b>Dog bone</b></td><td width="150px" align=center><b>Teal dog bone</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/dogFoodBowl.txt"><img src="./svgs/dog-food-bowl.svg"></a></td><td><a href="./converted-svg-snippets/tealDogFoodBowl.txt"><img src="./svgs/dog-food-bowl-teal.svg"></a></td><td><a href="./converted-svg-snippets/dogBone.txt"><img src="./svgs/dog-food-bone.svg"></a></td><td><a href="./converted-svg-snippets/tealDogBone.txt"><img src="./svgs/dog-food-bone-teal.svg"></a></td></tr>
+<table>
 
 <h2> For the cats </h2>
 
-| <div style="width:150px">Cat food bowl</div> | <div style="width:150px">Orange cat food bowl</div>|<div style="width:150px">Cat treat</div>|<div style="width:150px">Orange cat treat</div>|
-| :---: | :---: | :---: | :---: |
-|[![](./svgs/cat-food-bowl.svg)](./converted-svg-snippets/catFoodBowl.txt)|[![](./svgs/cat-food-bowl-orange.svg)](./converted-svg-snippets/orangeCatFoodBowl.txt)|[![](./svgs/cat-food-fish-bone.svg)](./converted-svg-snippets/fishTreat.txt)|[![](./svgs/cat-food-fish-bone-orange.svg)](./converted-svg-snippets/orangeFishTreat.txt)|
+<table>
+<tr><td width="150px" align=center><b>Cat food bowl</b></td><td width="150px" align=center><b>Orange dog food bowl</b></td><td width="150px" align=center><b>Cat treat</b></td><td width="150px" align=center><b>Orange cat treat</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/catFoodBowl.txt"><img src="./svgs/cat-food-bowl.svg"></a></td><td><a href="./converted-svg-snippets/orangeCatFoodBowl.txt"><img src="./svgs/cat-food-bowl-orange.svg"></a></td><td><a href="./converted-svg-snippets/fishTreat.txt"><img src="./svgs/cat-food-fish-bone.svg"></a></td><td><a href="./converted-svg-snippets/orangeFishTreat.txt"><img src="./svgs/cat-food-fish-bone-orange.svg"></a></td></tr>
+<table>
 
 <h2> Huh? </h2>
 
-| <div style="width:150px">Question mark</div> | <div style="width:150px">Blue question mark</div>|
-| :---: | :---: |
-|[![](./svgs/question-mark.svg)](./converted-svg-snippets/questionMark.txt)|[![](./svgs/question-mark-blue.svg)](./converted-svg-snippets/blueQuestionMark.txt)|
-
-| Something | Else |
-|---------------|------------------------------------------------------------------------------------------------------|
-| Short | This is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer this is longer |
-| Short | |
+<table>
+<tr><td width="150px" align=center><b>Question mark</b></td><td width="150px" align=center><b>Blue question mark</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/queastionMark.txt"><img src="./svgs/question-mark.svg"></a></td><td><a href="./converted-svg-snippets/blueQuestionMark.txt"><img src="./svgs/question-mark-blue.svg"></a></td></tr>
+<table>
 
 An example of its use in an Element Template entry (see contents):
 
