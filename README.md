@@ -34,7 +34,7 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> Coffee </h2>
 
 | <div style="width:150px">Coffee cup</div> | <div style="width:150px">Grey coffee cup</div>|<div style="width:150px">Coffee circle</div>|<div style="width:150px">Yellow coffee circle</div>|
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 |[![](./svgs/coffee-cup.svg)](./converted-svg-snippets/coffeeCup.txt)|[![](./svgs/coffee-cup-grey.svg)](./converted-svg-snippets/greyCoffeeCup.txt)|[![](./svgs/coffee-circle.svg)](./converted-svg-snippets/coffeeCircle.txt)|[![](./svgs/coffee-circle-yellow.svg)](./converted-svg-snippets/yellowCoffeeCircle.txt)|
 
 <h2> Other logos </h2>
@@ -47,13 +47,13 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> For the dogs </h2>
 
 | <div style="width:150px">Dog food bowl</div> | <div style="width:150px">Teal dog food bowl</div>|<div style="width:150px">Dog bone</div>|<div style="width:150px">Teal dog bone</div>|
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 |[![](./svgs/dog-food-bowl.svg)](./converted-svg-snippets/dogFoodBowl.txt)|[![](./svgs/dog-food-bowl-teal.svg)](./converted-svg-snippets/tealDogFoodBowl.txt)|[![](./svgs/dog-food-bone.svg)](./converted-svg-snippets/dogBone.txt)|[![](./svgs/dog-food-bone-teal.svg)](./converted-svg-snippets/tealDogBone.txt)|
 
 <h2> For the cats </h2>
 
 | <div style="width:150px">Cat food bowl</div> | <div style="width:150px">Orange cat food bowl</div>|<div style="width:150px">Cat treat</div>|<div style="width:150px">Orange cat treat</div>|
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 |[![](./svgs/cat-food-bowl.svg)](./converted-svg-snippets/catFoodBowl.txt)|[![](./svgs/cat-food-bowl-orange.svg)](./converted-svg-snippets/orangeCatFoodBowl.txt)|[![](./svgs/cat-food-fish-bone.svg)](./converted-svg-snippets/fishTreat.txt)|[![](./svgs/cat-food-fish-bone-orange.svg)](./converted-svg-snippets/orangeFishTreat.txt)|
 
 <h2> Huh? </h2>
