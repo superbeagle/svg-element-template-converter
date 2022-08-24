@@ -1,5 +1,5 @@
 # Element Template SVG Converter
-Takes SVGs and converts them for use in Camunda Modeler Element Templates
+Takes SVGs and converts them for use in Camunda Modeler Element Templates. SVGs require a bit of massaging, mostly refactoring to begin at a smaller size (usually 14-20px in wdith) and proper enoding, to be in a form Modeler understands.
 
 The main class is src/main/java/org/svg/utilities/RescaleImage
 
@@ -30,8 +30,8 @@ If you don't want to run the SVGs through the converter you can simply copy and 
 <h2> Friends </h2>
 
 <table>
-<tr><td width="150px" align=center><b>Extraterrestrial</b></td><td width="150px" align=center><b>Blue Robot</b></td><td width="150px" align=center><b>Yellow Robot</b></td><td width="150px" align=center><b>Green Monster</b></td><td width="150px" align=center><b>Orange Monster</b></td></tr>
-<tr><td><a href="./converted-svg-snippets/alien.txt"><img src="./svgs/Friendly-Alien.svg"></a></td><td><a href="./converted-svg-snippets/blueRobot.txt"><img src="./svgs/Robot-Blue.svg"></a></td><td><a href="./converted-svg-snippets/yellowRobot.txt"><img src="./svgs/Robot-Yellow.svg"></a></td><td><a href="./converted-svg-snippets/greenMonster.txt"><img src="./svgs/Monster-Green.svg"></a></td><td><a href="./converted-svg-snippets/orangeMonster.txt"><img src="./svgs/Monster-Orange.svg"></a></td></tr>
+<tr><td width="150px" align=center><b>Extraterrestrial</b></td><td width="150px" align=center><b>Blue Robot</b></td><td width="150px" align=center><b>Yellow Robot</b></td><td width="150px" align=center><b>Green Monster</b></td><td width="150px" align=center><b>Orange Monster</b></td><td width="150px" align=center><b>Dude</b></td><td width="150px" align=center><b>Pirate</b></td><td width="150px" align=center><b>Pigeon Hawk</b></td></tr>
+<tr><td><a href="./converted-svg-snippets/alien.txt"><img src="./svgs/Friendly-Alien.svg"></a></td><td><a href="./converted-svg-snippets/blueRobot.txt"><img src="./svgs/Robot-Blue.svg"></a></td><td><a href="./converted-svg-snippets/yellowRobot.txt"><img src="./svgs/Robot-Yellow.svg"></a></td><td><a href="./converted-svg-snippets/greenMonster.txt"><img src="./svgs/Monster-Green.svg"></a></td><td><a href="./converted-svg-snippets/orangeMonster.txt"><img src="./svgs/Monster-Orange.svg"></a></td><td><a href="./converted-svg-snippets/dude.txt"><img src="./svgs/Dude.svg"></a></td><td><a href="./converted-svg-snippets/pirate.txt"><img src="./svgs/Pirate.svg"></a></td><td><a href="./converted-svg-snippets/pigeonHawk.txt"><img src="./svgs/Pigeon-Hawk.svg"></a></td></tr>
 <table>
 
 <h2> Coffee </h2>
